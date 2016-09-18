@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+// Klasa odpowiada za logowanie do serwisu albo przekierowuje na stronê tworzenia konta
 public class LoginPage {
 	
 	public LoginPage(WebDriver driver) {
@@ -12,13 +13,15 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 	
+	// przekierowanie na stronê zak³adania konta 
 	public CreateAccPage creatNewAcc() {
 		editCreateMail.sendKeys(user);
 		btnCreateAcc.click();
 		
 		return new CreateAccPage(driver);
 	}
-
+	
+	// logowanie do serwisu 
 	public void logIn() {
 		editEmail.sendKeys(user);
 		editPswd.sendKeys(pswd);

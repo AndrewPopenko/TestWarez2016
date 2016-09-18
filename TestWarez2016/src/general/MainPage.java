@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+// Praca z g³ówn¹ stron¹
 public class MainPage {
 
 	public MainPage() throws IOException {
@@ -24,9 +25,11 @@ public class MainPage {
 		PageFactory.initElements(driver, this);
 	}
 	
+	// l¹dowanie strony g³ównej 
 	public void loadMainPage() {
 		driver.get("http://localhost:8181/gardenstore/pl/");
 	}
+	
 	
 	public LoginPage openLoginPage() {
 		btnLogin.click();

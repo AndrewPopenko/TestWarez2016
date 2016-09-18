@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/*Klasa odpowiada za tworzenie nowego konta u¿ytkownika*/
 public class CreateAccPage {
 	
 	public CreateAccPage(WebDriver driver) {
@@ -16,11 +17,14 @@ public class CreateAccPage {
 		PageFactory.initElements(driver, this);
 	}
 	
+	//Wype³niæ wszystkie po³a i potwierdziæ utworzenie nowego konta
 	public CreateAccPage fillForm() {
 		rbMale.click();
 		editFirstName.sendKeys("FirstName");
 		editLastName.sendKeys("LastName");
 		editPswd.sendKeys("qwerty123");
+		
+		//praca z comboBoxami
 		Select sl = new Select(selectDays);
 		sl.selectByValue("10");
 		
@@ -35,6 +39,7 @@ public class CreateAccPage {
 		
 		btnSubmit.click();
 		
+		//czekamy na pojawienie tekstu - konto stworzone domyœlnie
 		new WebDriverWait(driver, 5).
 			until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='center_column']/p[1]")));
 		
@@ -44,9 +49,11 @@ public class CreateAccPage {
 	
 	private WebDriver driver;
 	
+	//radioButton - Male
 	@FindBy(xpath="//*[@id='id_gender1']")
 	private WebElement rbMale;
 	
+	//radioButton - Female
 	@FindBy(xpath="//*[@id='id_gender2']")
 	private WebElement rbFemale;
 	

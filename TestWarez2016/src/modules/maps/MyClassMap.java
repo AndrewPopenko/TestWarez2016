@@ -8,7 +8,7 @@ import fp.forevo.proxy.*;
  * Class generated automaticaly. Do not edit from text editor. Change it using Test Object Manager.
  * @author Test Object Manager by ForProgress
  * @see www.forprogress.com.pl
- * @since 2016-09-12 23:30:26
+ * @since 2016-09-14 23:12:04
  */
 public class MyClassMap extends MasterScript {
 
