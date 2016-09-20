@@ -13,7 +13,7 @@ import general.LoginPage;
 import general.MainPage;
 
 public class SimpleTest {
-	@Test(enabled=false)
+	@Test(priority=1)
 	  public void f() throws FindFailed {
 		  
 		  mp.loadMainPage();
@@ -28,14 +28,21 @@ public class SimpleTest {
 		  
 	  }
 	
-	@Test
-	public void ff() throws InterruptedException {
+	@Test(priority=2)
+	public void ff() throws InterruptedException, FindFailed {
+		Kalkulator k  = new Kalkulator();
+		k.withSykuli();
+	}
+	
+	@Test(priority=3)
+	public void fff() throws InterruptedException, FindFailed {
 		Kalkulator k  = new Kalkulator();
 		k.onlyAutoIt();
 	}
+	
 	  @BeforeClass
 	  public void beforeClass() throws IOException {
-		  //mp = new MainPage();
+		  mp = new MainPage();
 	  }
 
 	  @AfterClass
