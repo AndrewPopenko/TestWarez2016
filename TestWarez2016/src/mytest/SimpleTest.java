@@ -8,11 +8,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import general.CreateAccPage;
+import general.Kalkulator;
 import general.LoginPage;
 import general.MainPage;
 
 public class SimpleTest {
-	@Test
+	@Test(enabled=false)
 	  public void f() throws FindFailed {
 		  
 		  mp.loadMainPage();
@@ -26,9 +27,15 @@ public class SimpleTest {
 		  mp.logOut();
 		  
 	  }
+	
+	@Test
+	public void ff() throws InterruptedException {
+		Kalkulator k  = new Kalkulator();
+		k.onlyAutoIt();
+	}
 	  @BeforeClass
 	  public void beforeClass() throws IOException {
-		  mp = new MainPage();
+		  //mp = new MainPage();
 	  }
 
 	  @AfterClass

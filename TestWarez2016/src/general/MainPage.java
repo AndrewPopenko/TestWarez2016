@@ -15,11 +15,12 @@ import org.openqa.selenium.support.PageFactory;
 public class MainPage {
 
 	public MainPage() throws IOException {
-		final String firebugPath = "D:\\Andrew\\ff_profile\\firebug-2.0.17-fx.xpi";
-		FirefoxProfile profile = new FirefoxProfile();       
-		profile.addExtension(new File(firebugPath));
+		//final String firebugPath = "D:\\Andrew\\ff_profile\\firebug-2.0.17-fx.xpi";
+		//FirefoxProfile profile = new FirefoxProfile();       
+		//profile.addExtension(new File(firebugPath));
 		
-		driver = new  FirefoxDriver(profile);	
+		//driver = new  FirefoxDriver(profile);
+		driver = new  FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, this);
@@ -27,7 +28,8 @@ public class MainPage {
 	
 	// l¹dowanie strony g³ównej 
 	public void loadMainPage() {
-		driver.get("http://localhost:8181/gardenstore/pl/");
+		//driver.get("http://localhost:8181/gardenstore/pl/");
+		driver.get("szkolenia.forprogress.com.pl:8000/gardenstore");
 	}
 	
 	
