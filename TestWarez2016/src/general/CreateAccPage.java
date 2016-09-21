@@ -44,7 +44,6 @@ public class CreateAccPage {
 			until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='center_column']/p[1]")));
 		
 		return this;
-		
 	}
 	
 	private WebDriver driver;
