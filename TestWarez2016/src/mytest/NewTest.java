@@ -2,29 +2,26 @@ package mytest;
 
 import org.testng.annotations.Test;
 
-import fp.forevo.manager.MasterScript;
-import modules.CommonControls;
-import modules.FirstWindow;
-import modules.MyWindow;
-
+import general.SimpleSeleniumTest;
 import org.testng.annotations.BeforeClass;
-import org.sikuli.script.FindFailed;
 import org.testng.annotations.AfterClass;
 
 public class NewTest {
   @Test
-  public void f() throws FindFailed {
-	  
-	  FirstWindow fw = new FirstWindow();
+  public void f() {
+	  SimpleSeleniumTest test = new SimpleSeleniumTest();
+	  test.openMainPageAndClickLogin();
+	  test.createNewAcc();
+	  test.logOut();
+	  test.logIn();
+	  test.logOut();
   }
   @BeforeClass
   public void beforeClass() {
-	  controls = new CommonControls();
+	  
   }
 
   @AfterClass
   public void afterClass() {
   }
-  
-  private CommonControls controls;
 }

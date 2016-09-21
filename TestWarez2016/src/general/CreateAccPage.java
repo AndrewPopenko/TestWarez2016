@@ -25,14 +25,14 @@ public class CreateAccPage {
 		editPswd.sendKeys("qwerty123");
 		
 		//praca z comboBoxami
-		Select sl = new Select(selectDays);
-		sl.selectByValue("10");
+		Select select = new Select(selectDays);
+		select.selectByValue("10");
 		
-		sl = new Select(selectMonths);
-		sl.selectByVisibleText("Czerwiec ");
+		select = new Select(selectMonths);
+		select.selectByVisibleText("Czerwiec ");
 		
-		sl = new Select(selectYears);
-		sl.selectByValue("1983");
+		select = new Select(selectYears);
+		select.selectByValue("1983");
 		
 		chbNews.click();
 		chbOptin.click();

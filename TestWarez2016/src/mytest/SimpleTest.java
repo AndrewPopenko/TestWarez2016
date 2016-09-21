@@ -11,7 +11,7 @@ import general.Kalkulator;
 import general.MainPage;
 
 public class SimpleTest {
-	@Test(priority=1, enabled=false)
+	@Test(priority=1)
 	public void baz() throws FindFailed, IOException {
 		MainPage mp = new MainPage();
 		mp.loadMainPage();

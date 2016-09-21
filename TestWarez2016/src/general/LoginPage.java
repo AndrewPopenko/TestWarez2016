@@ -30,7 +30,7 @@ public class LoginPage {
 	
 	private WebDriver driver;
 	
-	private String user = "test5@test.pl";
+	private String user = "test6@test.pl";
 	private String pswd = "qwerty123";
 	
 	@FindBy(xpath = "//*[@id='email_create']")
