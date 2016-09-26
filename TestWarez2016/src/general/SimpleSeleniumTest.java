@@ -88,6 +88,8 @@ public class SimpleSeleniumTest {
 		btnSubmit.click();		
 	}
 	
+	//Czesc Lukasz
+	
 	WebDriver driver;
 	
 	private String user = "test111@test.pl";
