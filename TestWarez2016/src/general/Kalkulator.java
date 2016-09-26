@@ -106,5 +106,6 @@ public class Kalkulator {
 		app.winClose("Kalkulator");
 		
 		System.out.println("========================= koniec testu =========================");
+		app.winClose("Kalkulator");
 	}
 }

@@ -7,6 +7,7 @@ import forEvo.maps.ForEvoSeleniumTestMap;
 import fp.forevo.manager.MasterScript;
 import fp.forevo.manager.TafException;
 import fp.forevo.proxy.Browser;
+import jnr.ffi.ObjectReferenceManager;
 
 
 public class ForEvoSeleniumTest extends ForEvoSeleniumTestMap {
@@ -37,11 +38,26 @@ public class ForEvoSeleniumTest extends ForEvoSeleniumTestMap {
 		
 		btnSubmit.click();
 		
-		//czekamy na pojawienie tekstu - konto stworzone domyœlnie
-		//new WebDriverWait(driver, 5).
-		//	until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='center_column']/p[1]")));
+		objMess.waitForVisible();
 	}
 	
-	private String user = "test112@test.pl";
+	public void logOut() throws TafException {
+		btnLogOut.click();
+	}
+	
+	public void logIn() throws TafException {
+		editEmail.setText(user);
+		editPswd.setText(pswd);
+		btnLoginToAcc.click();
+		objMess1.waitForVisible();
+	}
+	
+	public void closeBrowser() {
+		browser.close();
+		
+	}
+	
+	private String user = "test30@test.pl";
 	private String pswd = "qwerty123";
+	
 }

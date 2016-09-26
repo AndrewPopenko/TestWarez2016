@@ -14,7 +14,7 @@ import general.MainPage;
 import general.SimpleSeleniumTest;
 
 public class SimpleTest {
-	@Test(priority=5, enabled = true)
+	@Test(priority=5, enabled = false)
 	public void baz_old() throws FindFailed, IOException {
 		MainPage mp = new MainPage();
 		mp.loadMainPage();
@@ -25,7 +25,7 @@ public class SimpleTest {
 	}
 	
 	//WebDriver
-	@Test(priority=1, enabled = true)
+	@Test(priority=1, enabled = false)
 	public void bazW() {
 		SimpleSeleniumTest simpleTest = new SimpleSeleniumTest();
 		simpleTest.openMainPageAndClickLogin();
@@ -39,25 +39,29 @@ public class SimpleTest {
 	//ForEvo
 	@Test(priority=6, enabled = true)
 	public void bazF() throws TafException {
-		ForEvoSeleniumTest fe = new ForEvoSeleniumTest();
+		ForEvoSeleniumTest forEvoTest = new ForEvoSeleniumTest();
 	  
-		fe.openMainPageAndClickLogin();
-		fe.createNewAcc();
+		forEvoTest.openMainPageAndClickLogin();
+		forEvoTest.createNewAcc();
+		forEvoTest.logOut();
+		forEvoTest.logIn();
+		forEvoTest.logOut();
+		forEvoTest.closeBrowser();
 	}
 	
-	@Test(priority=2, enabled = true)
+	@Test(priority=2, enabled = false)
 	public void foo() throws InterruptedException, FindFailed {
 		Kalkulator k  = new Kalkulator();
 		k.withSikuli();
 	}
 	
-	@Test(priority=3, enabled = true)
+	@Test(priority=3, enabled = false)
 	public void bar() throws InterruptedException, FindFailed {
 		Kalkulator k  = new Kalkulator();
 		k.withAutoIt();
 	}
 	
-	@Test(priority=4, enabled = true)
+	@Test(priority=4, enabled = false)
 	public void foobar() throws FindFailed {
 		Kalkulator k = new Kalkulator();
 		k.mix();
