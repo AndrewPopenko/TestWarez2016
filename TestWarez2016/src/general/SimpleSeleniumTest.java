@@ -74,6 +74,10 @@ public class SimpleSeleniumTest {
 		btnLogOut.click();
 	}
 	
+	public void closeBrowser() {
+		driver.close();
+	}
+	
 	public void logIn() {
 		WebElement editEmail = driver.findElement(By.id("email"));
 		WebElement editPswd	 = driver.findElement(By.id("passwd"));
@@ -86,6 +90,6 @@ public class SimpleSeleniumTest {
 	
 	WebDriver driver;
 	
-	private String user = "test9@test.pl";
+	private String user = "test111@test.pl";
 	private String pswd = "qwerty123";
 }

@@ -41,6 +41,10 @@ public class MainPage {
 		return new LoginPage(driver);
 	}
 	
+	public void closeBrowser() {
+		driver.close();
+	}
+	
 	private WebDriver driver;
 	
 	@FindBy(xpath="//*[@id='header']/div[2]/div/div/nav/div[1]/a")

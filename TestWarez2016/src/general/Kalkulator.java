@@ -48,27 +48,27 @@ public class Kalkulator {
 		System.out.println("AutoIt ===============");
 		File file = new File("C:\\Program Files\\ForProgress\\ForEVO\\drivers", "jacob-1.18-M2-x64.dll");
 		System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
-		AutoItX x = new AutoItX();
+		AutoItX app = new AutoItX();
 		
-		x.run("calc.exe");
-		x.winActivate("Kalkulator");
-		x.winWaitActive("Kalkulator");
+		app.run("calc.exe");
+		app.winActivate("Kalkulator");
+		app.winWaitActive("Kalkulator");
 		//Enter 3
-		x.controlClick("Kalkulator", "", "133") ;
+		app.controlClick("Kalkulator", "", "133") ;
 		System.out.println("klikn¹³em na przycisk 3");
 		Thread.sleep(1000);
 		//Enter +
-		x.controlClick("Kalkulator", "", "93") ;
+		app.controlClick("Kalkulator", "", "93") ;
 		System.out.println("klikn¹³em na przycisk dodaæ");
 		Thread.sleep(1000);
 		//Enter 3
-		x.controlClick("Kalkulator", "", "133") ;
+		app.controlClick("Kalkulator", "", "133") ;
 		System.out.println("klikn¹³em na przycisk 3");
 		Thread.sleep(1000);
 		//Enter =
-		x.controlClick("Kalkulator", "", "121") ;
+		app.controlClick("Kalkulator", "", "121") ;
 		System.out.println("klikn¹³em na przycisk równoœci");
-		x.winClose("Kalkulator");
+		app.winClose("Kalkulator");
 		
 		System.out.println("========================= koniec testu =========================");
 	}
@@ -77,11 +77,11 @@ public class Kalkulator {
 		System.out.println("AutoIt + Sikuli ======");
 		File file = new File("C:\\Program Files\\ForProgress\\ForEVO\\drivers", "jacob-1.18-M2-x64.dll");
 		System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
-		AutoItX x = new AutoItX();
+		AutoItX app = new AutoItX();
 		
-		x.run("calc.exe");
-		x.winActivate("Kalkulator");
-		x.winWaitActive("Kalkulator");
+		app.run("calc.exe");
+		app.winActivate("Kalkulator");
+		app.winWaitActive("Kalkulator");
 		
 		//przycisk - 3
 		Pattern psiBtn3		= new Pattern("res\\btn3.png");
@@ -103,7 +103,7 @@ public class Kalkulator {
 		screen.find(psiBtn3).click();
 		screen.find(psiBtnEq).click();
 		
-		x.winClose("Kalkulator");
+		app.winClose("Kalkulator");
 		
 		System.out.println("========================= koniec testu =========================");
 	}

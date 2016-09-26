@@ -7,36 +7,63 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import forEvo.ForEvoSeleniumTest;
+import fp.forevo.manager.TafException;
 import general.Kalkulator;
 import general.MainPage;
+import general.SimpleSeleniumTest;
 
 public class SimpleTest {
-	@Test(priority=1)
-	public void baz() throws FindFailed, IOException {
+	@Test(priority=5, enabled = true)
+	public void baz_old() throws FindFailed, IOException {
 		MainPage mp = new MainPage();
 		mp.loadMainPage();
 		mp.openLoginPage().creatNewAcc().fillForm();
 		mp.logOut().logIn();
 		mp.logOut();
+		mp.closeBrowser();
 	}
 	
-	@Test(priority=2)
+	//WebDriver
+	@Test(priority=1, enabled = true)
+	public void bazW() {
+		SimpleSeleniumTest simpleTest = new SimpleSeleniumTest();
+		simpleTest.openMainPageAndClickLogin();
+		simpleTest.createNewAcc();
+		simpleTest.logOut();
+		simpleTest.logIn();
+		simpleTest.logOut();
+		simpleTest.closeBrowser();
+	}
+	
+	//ForEvo
+	@Test(priority=6, enabled = true)
+	public void bazF() throws TafException {
+		ForEvoSeleniumTest fe = new ForEvoSeleniumTest();
+	  
+		fe.openMainPageAndClickLogin();
+		fe.createNewAcc();
+	}
+	
+	@Test(priority=2, enabled = true)
 	public void foo() throws InterruptedException, FindFailed {
 		Kalkulator k  = new Kalkulator();
 		k.withSikuli();
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3, enabled = true)
 	public void bar() throws InterruptedException, FindFailed {
 		Kalkulator k  = new Kalkulator();
 		k.withAutoIt();
 	}
 	
-	@Test(priority=4)
+	@Test(priority=4, enabled = true)
 	public void foobar() throws FindFailed {
 		Kalkulator k = new Kalkulator();
 		k.mix();
 	}
+	
+	//@Test(priority)
 	
 	@BeforeClass
 	public void beforeClass() throws IOException {
